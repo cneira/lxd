@@ -204,6 +204,7 @@ func imgPostContInfo(d *Daemon, r *http.Request, req imagePostReq,
 	info.Properties = map[string]string{}
 	name := req.Source["name"]
 	ctype := req.Source["type"]
+	compression_algorithm := req.Source["compression_algorithm"]
 	if ctype == "" || name == "" {
 		return info, fmt.Errorf("No source provided")
 	}
